@@ -1,0 +1,43 @@
+services:
+  airbnb-api:
+    build: .
+    container_name: airbnb-api-prd
+    restart: unless-stopped
+    environment:
+      - PORT=3005
+      - EVOLUTION_API_URL=${EVOLUTION_API_URL}
+      - EVOLUTION_API_KEY=${EVOLUTION_API_KEY}
+      - EVOLUTION_INSTANCE=${EVOLUTION_INSTANCE}
+      - OWNER_WHATSAPP=${OWNER_WHATSAPP}
+      - SEND_LEAD_CONFIRMATION=${SEND_LEAD_CONFIRMATION}
+    volumes:
+      - airbnb-data:/app/data
+    networks:
+      - proxy
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=proxy"
+      # HTTP Router
+      - "traefik.http.routers.airbnb-api.rule=Host(`airbnb-api.macspark.dev`)"
+      - "traefik.http.routers.airbnb-api.entrypoints=web"
+      - "traefik.http.routers.airbnb-api.middlewares=airbnb-headers@docker"
+      # HTTPS Router
+      - "traefik.http.routers.airbnb-api-secure.rule=Host(`airbnb-api.macspark.dev`)"
+      - "traefik.http.routers.airbnb-api-secure.entrypoints=websecure"
+      - "traefik.http.routers.airbnb-api-secure.tls=true"
+      - "traefik.http.routers.airbnb-api-secure.middlewares=airbnb-headers@docker"
+      # Service
+      - "traefik.http.services.airbnb-api.loadbalancer.server.port=3005"
+      # Headers/CORS middleware
+      - "traefik.http.middlewares.airbnb-headers.headers.customrequestheaders.X-Forwarded-Proto=https"
+      - "traefik.http.middlewares.airbnb-headers.headers.accesscontrolallowmethods=GET,POST,PATCH,DELETE,OPTIONS"
+      - "traefik.http.middlewares.airbnb-headers.headers.accesscontrolallowheaders=Content-Type,Authorization"
+      - "traefik.http.middlewares.airbnb-headers.headers.accesscontrolalloworiginlist=https://macs901.github.io,http://localhost:3000,http://localhost:5500"
+      - "traefik.http.middlewares.airbnb-headers.headers.accesscontrolmaxage=100"
+
+volumes:
+  airbnb-data:
+
+networks:
+  proxy:
+    external: true

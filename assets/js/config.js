@@ -39,7 +39,7 @@ const SiteConfig = {
 
     // API Endpoints - Backend para salvar leads
     api: {
-        baseUrl: 'http://localhost:3001', // Alterar para URL de producao
+        baseUrl: 'https://airbnb-api.macspark.dev', // URL de producao via Traefik
         formSubmit: '/api/leads',
         enabled: true // Ativado para salvar leads no banco
     },
