@@ -263,23 +263,38 @@ const FormHandler = (function() {
     async function sendToAPI(data) {
         // Check if API is enabled
         if (typeof SiteConfig !== 'undefined' && SiteConfig.api?.enabled) {
-            const response = await fetch(SiteConfig.api.formSubmit, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    ...data,
-                    timestamp: new Date().toISOString(),
-                    source: 'landing_page'
-                })
-            });
+            const apiUrl = SiteConfig.api.baseUrl + SiteConfig.api.formSubmit;
 
-            if (!response.ok) {
-                throw new Error('API request failed');
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        nome: data.nome,
+                        whatsapp: data.whatsapp,
+                        email: data.email,
+                        tipo: data.tipo,
+                        endereco: data.endereco,
+                        situacao: data.situacao,
+                        aluguel: data.aluguel,
+                        mensagem: data.mensagem
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error('API request failed');
+                }
+
+                const result = await response.json();
+                console.log('Lead salvo com sucesso:', result);
+                return true;
+            } catch (error) {
+                console.warn('Erro ao salvar lead no backend:', error.message);
+                // Continua mesmo se falhar - abre WhatsApp como fallback
+                return false;
             }
-
-            return true;
         }
 
         return false;

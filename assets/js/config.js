@@ -37,10 +37,11 @@ const SiteConfig = {
         minAddressLength: 10
     },
 
-    // API Endpoints (for future backend integration)
+    // API Endpoints - Backend para salvar leads
     api: {
+        baseUrl: 'http://localhost:3001', // Alterar para URL de producao
         formSubmit: '/api/leads',
-        enabled: false
+        enabled: true // Ativado para salvar leads no banco
     },
 
     // Analytics

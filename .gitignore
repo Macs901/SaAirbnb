@@ -18,3 +18,10 @@ Thumbs.db
 # Environment
 .env
 .env.local
+
+# Database
+*.db
+
+# Backend specific
+backend/node_modules/
+backend/.env
