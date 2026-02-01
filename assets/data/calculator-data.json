@@ -1,0 +1,95 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2026-02-01",
+  "sources": [
+    "FGV/Airbnb 2024",
+    "Secovi Rio 2025",
+    "AirROI Analytics"
+  ],
+  "fees": {
+    "platformFee": 0.15,
+    "managementFee": 0.18
+  },
+  "types": {
+    "studio": {
+      "name": "Studio",
+      "description": "ate 35m2",
+      "baseRate": 280,
+      "occupancy": 0.50,
+      "minNights": 2
+    },
+    "1q": {
+      "name": "1 Quarto",
+      "description": "35-50m2",
+      "baseRate": 350,
+      "occupancy": 0.50,
+      "minNights": 2
+    },
+    "2q": {
+      "name": "2 Quartos",
+      "description": "50-80m2",
+      "baseRate": 450,
+      "occupancy": 0.48,
+      "minNights": 3
+    },
+    "3q": {
+      "name": "3+ Quartos",
+      "description": "80m2+",
+      "baseRate": 600,
+      "occupancy": 0.45,
+      "minNights": 3
+    }
+  },
+  "regions": {
+    "centro": {
+      "name": "Centro / Porto Maravilha",
+      "multiplier": 1.0,
+      "highlights": ["Proxima ao VLT", "Area revitalizada"]
+    },
+    "lapa": {
+      "name": "Lapa / Santa Teresa",
+      "multiplier": 1.05,
+      "highlights": ["Vida noturna", "Charme historico"]
+    },
+    "catete": {
+      "name": "Catete / Flamengo",
+      "multiplier": 1.1,
+      "highlights": ["Metro", "Parque do Flamengo"]
+    },
+    "copacabana": {
+      "name": "Copacabana",
+      "multiplier": 1.3,
+      "highlights": ["Praia", "Alta demanda turistica"]
+    },
+    "ipanema": {
+      "name": "Ipanema / Leblon",
+      "multiplier": 1.5,
+      "highlights": ["Premium", "Maior diaria media"]
+    }
+  },
+  "seasonality": {
+    "high": {
+      "months": [12, 1, 2, 3],
+      "multiplier": 1.4,
+      "name": "Alta Temporada"
+    },
+    "medium": {
+      "months": [6, 7, 10, 11],
+      "multiplier": 1.1,
+      "name": "Media Temporada"
+    },
+    "low": {
+      "months": [4, 5, 8, 9],
+      "multiplier": 0.9,
+      "name": "Baixa Temporada"
+    }
+  },
+  "marketData": {
+    "totalListings": 25000,
+    "annualGrowth": "18-20%",
+    "economicImpact": "R$ 9,9 bilhoes",
+    "jobsGenerated": 61600,
+    "averageOccupancy": "44-56%",
+    "averageRate": "R$ 280-380"
+  }
+}
