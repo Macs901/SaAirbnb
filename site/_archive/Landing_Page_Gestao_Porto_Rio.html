@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gestão profissional de Airbnb no Rio de Janeiro com transparência total, precificação inteligente e compliance fiscal 2026. Transforme seu apartamento em renda recorrente.">
+    <title>Gestão Porto Rio - Gestão Profissional de Airbnb no Rio de Janeiro</title>
+    <style>
+        :root {
+            --primary: #20B2AA;
+            --primary-dark: #1A8F88;
+            --secondary: #2C3E50;
+            --accent: #E74C3C;
+            --light: #ECF0F1;
+            --dark: #34495E;
+            --white: #FFFFFF;
+            --gray: #7F8C8D;
+            --success: #27AE60;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header / Navigation */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .cta-button {
+            background: var(--primary);
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            background: var(--primary-dark);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            padding: 6rem 0 4rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--white);
+            color: var(--primary);
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            padding: 1rem 2rem;
+            border: 2px solid var(--white);
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: background 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        /* Stats Section */
+        .stats {
+            background: var(--white);
+            padding: 3rem 0;
+            box-shadow: 0 -5px 20px rgba(0,0,0,0.05);
+            position: relative;
+            margin-top: -2rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-item p {
+            color: var(--gray);
+            font-size: 1.1rem;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 4rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: var(--gray);
+        }
+
+        /* Case Study */
+        .case-study {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: var(--white);
+        }
+
+        .case-study-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .case-study-text h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .case-study-metrics {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .metric-box {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .metric-box h4 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+
+        .service-card ul {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .service-card li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .service-card li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: bold;
+        }
+
+        /* Differentiators */
+        .differentiators {
+            background: var(--light);
+        }
+
+        .diff-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .diff-item {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+        }
+
+        .diff-item h3 {
+            color: var(--primary);
+            margin: 1rem 0;
+            font-size: 1.3rem;
+        }
+
+        /* Porto Maravilha Section */
+        .porto-section {
+            background: linear-gradient(to right, rgba(32,178,170,0.9), rgba(26,143,136,0.9)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><rect fill="%23667eea" width="1200" height="400"/></svg>');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+        }
+
+        .attractions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .attraction-item {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            text-align: center;
+        }
+
+        .attraction-item span {
+            font-size: 2rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Pricing */
+        .pricing {
+            background: var(--light);
+        }
+
+        .pricing-box {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 10px;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.1);
+        }
+
+        .pricing-box h3 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .pricing-item {
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            background: var(--light);
+            border-radius: 8px;
+        }
+
+        .pricing-item h4 {
+            font-size: 1.5rem;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .price {
+            font-size: 2rem;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .includes {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 2px solid var(--white);
+        }
+
+        .includes h5 {
+            margin-bottom: 0.5rem;
+            color: var(--secondary);
+        }
+
+        .includes ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 0.5rem;
+        }
+
+        .includes li:before {
+            content: "✓";
+            color: var(--success);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        /* Fiscal Section */
+        .fiscal-alert {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: var(--white);
+            padding: 3rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .fiscal-alert h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        /* FAQ */
+        .faq-item {
+            background: var(--white);
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            cursor: pointer;
+            transition: box-shadow 0.3s;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 5px 20px rgba(0,0,0,0.12);
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--secondary);
+            font-size: 1.1rem;
+        }
+
+        .faq-answer {
+            margin-top: 1rem;
+            color: var(--gray);
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 10px;
+            max-width: 700px;
+            margin: 0 auto;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--secondary);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid var(--light);
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-submit {
+            background: var(--primary);
+            color: var(--white);
+            padding: 1rem 3rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+            width: 100%;
+        }
+
+        .form-submit:hover {
+            background: var(--primary-dark);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary);
+            color: var(--white);
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: var(--white);
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .footer-section a:hover {
+            opacity: 1;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            opacity: 0.7;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .mobile-menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--dark);
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            .case-study-content {
+                grid-template-columns: 1fr;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header / Navigation -->
+    <header>
+        <nav class="container">
+            <div class="logo">🏠 Gestão Porto Rio</div>
+            <ul class="nav-links">
+                <li><a href="#como-funciona">Como Funciona</a></li>
+                <li><a href="#diferenciais">Diferenciais</a></li>
+                <li><a href="#precos">Preços</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+            <a href="#simulacao" class="cta-button">Simular Receita</a>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="fade-in-up">Transforme seu Apartamento no Centro do Rio em Renda Recorrente</h1>
+            <p class="fade-in-up">Gestão profissional de Airbnb com transparência total, tecnologia inteligente e segurança fiscal</p>
+            <div class="hero-cta fade-in-up">
+                <a href="#simulacao" class="btn-primary">Simular Meu Rendimento Grátis</a>
+                <a href="#como-funciona" class="btn-secondary">Como Funciona</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>+50%</h3>
+                    <p>Mais receita vs aluguel tradicional</p>
+                </div>
+                <div class="stat-item">
+                    <h3>18%</h3>
+                    <p>Comissão simples e transparente</p>
+                </div>
+                <div class="stat-item">
+                    <h3>24/7</h3>
+                    <p>Atendimento a hóspedes</p>
+                </div>
+                <div class="stat-item">
+                    <h3>100%</h3>
+                    <p>Transparência financeira</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Study -->
+    <section class="case-study">
+        <div class="container">
+            <div class="case-study-content">
+                <div class="case-study-text">
+                    <h3>Nosso Primeiro Imóvel: Studio Porto Maravilha</h3>
+                    <p>35m² estrategicamente localizado próximo ao Museu do Amanhã, AquaRio e Boulevard Olímpico.</p>
+                    <div class="case-study-metrics">
+                        <div class="metric-box">
+                            <h4>78%</h4>
+                            <p>Taxa de Ocupação</p>
+                        </div>
+                        <div class="metric-box">
+                            <h4>R$ 5.800</h4>
+                            <p>Receita Mensal Média</p>
+                        </div>
+                        <div class="metric-box">
+                            <h4>4.9⭐</h4>
+                            <p>Avaliação Média</p>
+                        </div>
+                        <div class="metric-box">
+                            <h4>+140%</h4>
+                            <p>vs Aluguel Tradicional</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="case-study-image">
+                    <svg viewBox="0 0 400 300" style="width:100%; height:auto;">
+                        <rect fill="#fff" width="400" height="300" rx="10"/>
+                        <rect fill="#20B2AA" x="50" y="50" width="300" height="200" rx="5"/>
+                        <text fill="#fff" x="200" y="150" text-anchor="middle" font-size="24" font-weight="bold">Studio Porto Maravilha</text>
+                        <text fill="#fff" x="200" y="180" text-anchor="middle" font-size="14">35m² • 2 pessoas • Wi-Fi • Ar-condicionado</text>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="como-funciona">
+        <div class="container">
+            <div class="section-header">
+                <h2>Como Funciona Nossa Gestão Completa</h2>
+                <p>Do anúncio à limpeza — cuidamos de tudo para você só receber no final do mês</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">📈</div>
+                    <h3>Anúncios que Vendem Todo Dia</h3>
+                    <p>Criação e otimização profissional em múltiplas plataformas</p>
+                    <ul>
+                        <li>Airbnb, Booking, Expedia</li>
+                        <li>Precificação dinâmica inteligente</li>
+                        <li>Ajuste automático por eventos e sazonalidade</li>
+                        <li>Fotos e descrições otimizadas (SEO)</li>
+                        <li>Gestão de calendário (evita overbooking)</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏨</div>
+                    <h3>Operação Padrão Hotel</h3>
+                    <p>Limpeza profissional e manutenção preventiva</p>
+                    <ul>
+                        <li>Limpeza rigorosa pós-checkout</li>
+                        <li>Troca completa de enxoval</li>
+                        <li>Gestão de estoque</li>
+                        <li>Manutenção até R$ 300/mês sem te acionar</li>
+                        <li>Rede de parceiros (eletricista, encanador, etc.)</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💬</div>
+                    <h3>Atendimento Acolhedor 24/7</h3>
+                    <p>Comunicação rápida e profissional com hóspedes</p>
+                    <ul>
+                        <li>Resposta <10 minutos (horário estendido)</li>
+                        <li>Check-in remoto via smart lock</li>
+                        <li>Instruções claras e manual completo</li>
+                        <li>Gestão de reviews e reputação</li>
+                        <li>Resolução de problemas sem te incomodar</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3>Transparência Financeira Total</h3>
+                    <p>Relatórios mensais e dashboard em tempo real</p>
+                    <ul>
+                        <li>DRE mensal completo</li>
+                        <li>Indicadores de performance</li>
+                        <li>Dashboard online 24/7</li>
+                        <li>Repasse até dia 10 do mês</li>
+                        <li>Orientação tributária (reforma 2026)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Differentiators -->
+    <section id="diferenciais" class="differentiators">
+        <div class="container">
+            <div class="section-header">
+                <h2>Por Que Somos Diferentes</h2>
+                <p>Não somos só mais uma gestora — somos parceiros do seu sucesso</p>
+            </div>
+            <div class="diff-grid">
+                <div class="diff-item">
+                    <div style="font-size: 3rem;">🔍</div>
+                    <h3>Transparência Total</h3>
+                    <p>DRE mensal, dashboard em tempo real e acesso completo às plataformas</p>
+                </div>
+                <div class="diff-item">
+                    <div style="font-size: 3rem;">⚖️</div>
+                    <h3>Compliance Fiscal 2026</h3>
+                    <p>Entendemos a reforma tributária e te ajudamos a navegar a nova realidade</p>
+                </div>
+                <div class="diff-item">
+                    <div style="font-size: 3rem;">🤖</div>
+                    <h3>Tecnologia Inteligente</h3>
+                    <p>Precificação dinâmica automatizada maximiza sua receita em +20-30%</p>
+                </div>
+                <div class="diff-item">
+                    <div style="font-size: 3rem;">💙</div>
+                    <h3>Atendimento Acolhedor</h3>
+                    <p>Gestão feita por quem se importa — atendimento feminino profissional</p>
+                </div>
+                <div class="diff-item">
+                    <div style="font-size: 3rem;">📋</div>
+                    <h3>Processos Auditáveis</h3>
+                    <p>Background em auditoria e controles — operação profissional</p>
+                </div>
+                <div class="diff-item">
+                    <div style="font-size: 3rem;">🚫</div>
+                    <h3>Sem Pegadinhas</h3>
+                    <p>Comissão simples (18%), sem taxas escondidas, sem multa para sair</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Porto Maravilha Section -->
+    <section class="porto-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 style="color: white;">Porto Maravilha: Localização Estratégica</h2>
+                <p style="color: rgba(255,255,255,0.9);">Região revitalizada, turística e corporativa — ideal para temporada</p>
+            </div>
+            <div class="attractions-grid">
+                <div class="attraction-item">
+                    <span>🏛️</span>
+                    <h4>Museu do Amanhã</h4>
+                    <p>5 minutos</p>
+                </div>
+                <div class="attraction-item">
+                    <span>🐠</span>
+                    <h4>AquaRio</h4>
+                    <p>7 minutos</p>
+                </div>
+                <div class="attraction-item">
+                    <span>🎨</span>
+                    <h4>Boulevard Olímpico</h4>
+                    <p>3 minutos</p>
+                </div>
+                <div class="attraction-item">
+                    <span>🚊</span>
+                    <h4>VLT</h4>
+                    <p>2 minutos</p>
+                </div>
+                <div class="attraction-item">
+                    <span>✈️</span>
+                    <h4>Santos Dumont</h4>
+                    <p>10 minutos</p>
+                </div>
+                <div class="attraction-item">
+                    <span>🎭</span>
+                    <h4>Museu de Arte do Rio</h4>
+                    <p>6 minutos</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="precos" class="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2>Modelo de Remuneração Simples e Transparente</h2>
+                <p>Você só paga quando seu imóvel fatura — sem surpresas</p>
+            </div>
+            <div class="pricing-box">
+                <div class="pricing-item">
+                    <h4>Taxa de Setup</h4>
+                    <p class="price">R$ 400</p>
+                    <p style="color: var(--gray);">Pagamento único (pode dividir em 2x)</p>
+                    <p style="margin-top: 1rem;">Inclui: vistoria completa, checklist, fotos, criação de anúncios, configuração de fechadura inteligente e onboarding completo (15-20 dias)</p>
+                </div>
+                <div class="pricing-item">
+                    <h4>Comissão Mensal</h4>
+                    <p class="price">18%</p>
+                    <p style="color: var(--gray);">Sobre faturamento bruto de reservas efetivadas</p>
+                    <div class="includes">
+                        <h5>✅ Tudo incluído na comissão:</h5>
+                        <ul>
+                            <li>Criação e otimização de anúncios</li>
+                            <li>Precificação dinâmica automatizada</li>
+                            <li>Gestão multi-plataforma</li>
+                            <li>Comunicação com hóspedes</li>
+                            <li>Check-in/check-out remoto</li>
+                            <li>Coordenação de limpeza</li>
+                            <li>Gestão de enxoval</li>
+                            <li>Manutenção até R$ 300/mês</li>
+                            <li>Gestão de reviews</li>
+                            <li>Atendimento emergências</li>
+                            <li>Relatório mensal completo</li>
+                            <li>Dashboard em tempo real</li>
+                            <li>Orientação tributária básica</li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 2rem; padding: 1.5rem; background: var(--light); border-radius: 8px;">
+                    <h4 style="color: var(--secondary); margin-bottom: 0.5rem;">Exemplo de Cálculo</h4>
+                    <p style="color: var(--gray);">20 diárias × R$ 300 = R$ 6.000 faturamento</p>
+                    <p style="color: var(--gray);">Nossa comissão (18%) = R$ 1.080</p>
+                    <p style="font-size: 1.5rem; color: var(--primary); font-weight: bold; margin-top: 0.5rem;">Você recebe: R$ 4.920</p>
+                    <p style="font-size: 0.9rem; color: var(--gray); margin-top: 0.5rem;">*Já descontadas taxas de plataforma (~12-15%)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fiscal Alert -->
+    <section>
+        <div class="container">
+            <div class="fiscal-alert">
+                <h3>⚠️ Reforma Tributária 2026: Você está preparado?</h3>
+                <p style="font-size: 1.1rem; margin: 1rem 0;">A partir de 2026, aluguel de temporada passou a ser tributado como serviço de hospedagem. Carga pode chegar a 27-44% dependendo de PF/PJ.</p>
+                <p style="font-weight: bold; font-size: 1.2rem;">Nós te ajudamos a navegar essa nova realidade com orientação tributária incluída no serviço.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>Perguntas Frequentes</h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item" onclick="this.classList.toggle('active')">
+                    <div class="faq-question">
+                        <span>Quanto tempo até receber a primeira reserva?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Normalmente 7-15 dias após publicação dos anúncios. Depende da qualidade do imóvel, precificação inicial, sazonalidade e concorrência. Nos primeiros meses, oferecemos preços competitivos para ganhar reviews e subir no ranking das plataformas.</p>
+                    </div>
+                </div>
+                <div class="faq-item" onclick="this.classList.toggle('active')">
+                    <div class="faq-question">
+                        <span>E se eu quiser encerrar o contrato?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sem problemas! Após os 3 meses iniciais, você pode encerrar a qualquer momento com aviso de 30 dias. Sem multa. Reservas já confirmadas serão honradas (não cancelamos hóspedes).</p>
+                    </div>
+                </div>
+                <div class="faq-item" onclick="this.classList.toggle('active')">
+                    <div class="faq-question">
+                        <span>Vocês garantem ocupação mínima?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Não garantimos ocupação (ninguém pode garantir), mas usamos as melhores práticas do mercado: precificação dinâmica inteligente, anúncios otimizados, atendimento rápido e gestão de reviews. Resultados esperados: taxa de ocupação >70% após período de maturação (3-6 meses).</p>
+                    </div>
+                </div>
+                <div class="faq-item" onclick="this.classList.toggle('active')">
+                    <div class="faq-question">
+                        <span>Posso usar meu imóvel quando quiser?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sim! Basta solicitar as datas com antecedência (mínimo 7 dias). Sujeito à disponibilidade (reservas confirmadas têm prioridade). Você paga apenas a taxa de limpeza pós-uso (R$ 100-120). Uso pessoal não gera comissão.</p>
+                    </div>
+                </div>
+                <div class="faq-item" onclick="this.classList.toggle('active')">
+                    <div class="faq-question">
+                        <span>E se algo quebrar ou for danificado?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Até R$ 300/mês: resolvemos e reembolsamos com nota fiscal. Acima de R$ 300: pedimos sua aprovação. Se dano for culpa do hóspede: acionamos caução + proteção da plataforma (Airbnb oferece até US$ 1 milhão). Recomendamos também contratar seguro residencial.</p>
+                    </div>
+                </div>
+                <div class="faq-item" onclick="this.classList.toggle('active')">
+                    <div class="faq-question">
+                        <span>Qual a diferença de vocês para outras gestoras?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>✅ Transparência financeira (DRE mensal + dashboard tempo real) ✅ Compliance fiscal (entendemos reforma 2026) ✅ Atendimento acolhedor (gestão que se importa) ✅ Tecnologia inteligente (precificação automatizada) ✅ Processos auditáveis (background em controles) ✅ Sem pegadinhas (comissão simples 18%, sem taxas escondidas)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact / Simulation Form -->
+    <section id="simulacao" style="background: var(--light); padding: 4rem 0;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Simule o Rendimento do Seu Imóvel</h2>
+                <p>Preencha o formulário e receba em até 48h uma projeção personalizada — 100% gratuito</p>
+            </div>
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <label for="nome">Seu Nome *</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="telefone">WhatsApp *</label>
+                    <input type="tel" id="telefone" name="telefone" placeholder="(21) 99999-9999" required>
+                </div>
+                <div class="form-group">
+                    <label for="endereco">Endereço do Imóvel *</label>
+                    <input type="text" id="endereco" name="endereco" placeholder="Rua, número, bairro" required>
+                </div>
+                <div class="form-group">
+                    <label for="tipo">Tipo de Imóvel</label>
+                    <select id="tipo" name="tipo">
+                        <option value="">Selecione...</option>
+                        <option value="studio">Studio</option>
+                        <option value="1quarto">1 Quarto</option>
+                        <option value="2quartos">2 Quartos</option>
+                        <option value="3quartos">3+ Quartos</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="metragem">Metragem (m²)</label>
+                    <input type="number" id="metragem" name="metragem" placeholder="Ex: 35">
+                </div>
+                <div class="form-group">
+                    <label for="situacao">Situação Atual</label>
+                    <select id="situacao" name="situacao">
+                        <option value="">Selecione...</option>
+                        <option value="vazio">Vazio/disponível</option>
+                        <option value="alugado">Alugado longo prazo</option>
+                        <option value="proprio">Uso próprio ocasional</option>
+                        <option value="temporada">Já faço temporada (quero profissionalizar)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="mensagem">Observações</label>
+                    <textarea id="mensagem" name="mensagem" placeholder="Conte mais sobre seu imóvel ou suas dúvidas..."></textarea>
+                </div>
+                <button type="submit" class="form-submit">Receber Simulação Gratuita</button>
+                <p style="text-align: center; margin-top: 1rem; color: var(--gray); font-size: 0.9rem;">
+                    Ao enviar, você concorda em receber contato via WhatsApp ou e-mail. Seus dados estão seguros.
+                </p>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Gestão Porto Rio</h3>
+                    <p>Gestão profissional de Airbnb com transparência total e tecnologia inteligente.</p>
+                    <p style="margin-top: 1rem;">Transformando imóveis em renda recorrente desde 2026.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="#como-funciona">Como Funciona</a></li>
+                        <li><a href="#diferenciais">Diferenciais</a></li>
+                        <li><a href="#precos">Preços</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#simulacao">Simulação Gratuita</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <ul>
+                        <li>📱 WhatsApp: [inserir número]</li>
+                        <li>📧 E-mail: contato@gestaoportorio.com.br</li>
+                        <li>📍 Atuação: Centro e Porto Maravilha - Rio de Janeiro, RJ</li>
+                        <li>🕐 Atendimento: Seg-Sex 9h-18h | Sáb 9h-13h</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Áreas de Atuação</h3>
+                    <ul>
+                        <li>Porto Maravilha</li>
+                        <li>Centro</li>
+                        <li>Lapa</li>
+                        <li>Santa Teresa</li>
+                        <li>Catete</li>
+                        <li>Em breve: Zona Sul</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Gestão Porto Rio. Todos os direitos reservados.</p>
+                <p>CNPJ: [a inserir] | Desenvolvido com 💙 no Rio de Janeiro</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Form submission handler
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Collect form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData.entries());
+
+            // Here you would typically send to a backend
+            // For now, just show success message
+            alert('Obrigado! Recebemos sua solicitação. Entraremos em contato em até 48h com a simulação personalizada do seu imóvel.');
+
+            // Reset form
+            this.reset();
+
+            // In production, integrate with:
+            // - Google Sheets API
+            // - Email service (SendGrid, Mailgun)
+            // - CRM (HubSpot, Pipedrive)
+            // - WhatsApp API
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // FAQ toggle animation
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const toggle = this.querySelector('.faq-toggle');
+                toggle.textContent = this.classList.contains('active') ? '−' : '+';
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all service cards and diff items
+        document.querySelectorAll('.service-card, .diff-item, .stat-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
