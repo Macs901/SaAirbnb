@@ -7,8 +7,8 @@ const SiteConfig = {
     // Contact Information
     contact: {
         whatsapp: {
-            number: '5521999999999', // UPDATE: Replace with real number
-            display: '(21) 99999-9999',
+            number: '5531975461540',
+            display: '(31) 97546-1540',
             defaultMessage: 'Ola! Quero saber mais sobre gestao de Airbnb para meu imovel.'
         },
         email: 'contato@gestaoportorio.com.br'
